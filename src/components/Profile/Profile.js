@@ -1,5 +1,6 @@
 import React from 'react';
 import WalletDetails from '../WalletDetails/WalletDetails';
+import Transactions from '../Transactions/Transactions';
 import style from './Profile.css';
 
 class Profile extends React.Component {
@@ -18,7 +19,8 @@ class Profile extends React.Component {
 
 		return (
 			<div className={style.profile}>
-				<WalletDetails balance={balance} address={address}/>
+				<WalletDetails balance={balance} address={address} />
+				<Transactions txs={txs} />
 			</div>
 		);
 	}

@@ -44,8 +44,10 @@ class App extends Component {
 		return (
 			<div className="App">
 				<div className={style.App}>
-					<h1>React Blockchain</h1>
+					<h1 className={style.header}>React Blockchain</h1>
 					<Profile profileDetails={this.state.profileDetails} />
+					<div className={style.bg}></div>
+					<div className={style.flare}></div>
 				</div>
 			</div>
 		);
