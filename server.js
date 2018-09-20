@@ -19,3 +19,33 @@ const port = process.env.PORT || 8080;
 server.listen(port, () => {
 	console.log(`Servers up on Port: ${port}`);
 });
+
+app.post('/api/data', (request, response) => {
+	console.log('fetching');
+	let reqBody = "";
+	let data;
+
+	request.on('data', function(chunk) {
+		reqBody += chunk;
+	});
+
+	request.on('end', function() {
+		data = JSON.parse(reqBody);
+		console.log(data);
+		let {address, offset} = data;
+
+		fetch(`https://blockchain.info/rawaddr/${address}?limit=6&offset=${offset}`, {
+				method: 'GET',
+				headers: {
+					'Access-Control-Allow-Origin': '*',
+					'Content-Type': 'text/plain'
+				}
+			})
+			.then(res => res.json())
+			.then(data => response.send(data))
+			.catch(err => {
+				response.send(err);
+				console.log(err);
+			});
+	});
+});

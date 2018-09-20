@@ -1,0 +1,52 @@
+.wallet_details {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	padding-top: 3em;
+}
+
+.header {
+	font: normal 100 2.5em/1.2em 'Exo 2', Arial, sans-serif;
+	letter-spacing: .06em;
+	will-change: transform;
+	text-transform: uppercase;
+	text-align: center;
+	word-break: break-word;
+	-webkit-animation: tracking-in-contract-bck 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+	-moz-animation: tracking-in-contract-bck 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+	animation: tracking-in-contract-bck 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+	animation-delay: 0.7s;
+}
+
+@-webkit-keyframes tracking-in-contract-bck {
+	0% {
+		letter-spacing: 1em;
+		-webkit-transform: translateZ(400px);
+		transform: translateZ(400px);
+		opacity: 0
+	}
+	40% {
+		opacity: .6
+	}
+	100% {
+		-webkit-transform: translateZ(0);
+		transform: translateZ(0);
+		opacity: 1
+	}
+}
+@keyframes tracking-in-contract-bck {
+	0% {
+		letter-spacing: 1em;
+		-webkit-transform: translateZ(400px);
+		transform: translateZ(400px);
+		opacity: 0
+	}
+	40% {
+		opacity: .6
+	}
+	100% {
+		-webkit-transform: translateZ(0);
+		transform: translateZ(0);
+		opacity: 1
+	}
+}
