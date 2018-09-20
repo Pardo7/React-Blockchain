@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
-import style from './Transactions.css';
+import style from './NewTransactions.css';
 import sb from 'satoshi-bitcoin';
 
-class Transactions extends Component {
+class NewTransactions extends Component {
 	render() {
-		let transactions = this.props.txs;
-
-		if (!transactions) {
+		let transactions;
+		if (this.props.newTransactions === null) {
 			return null;
+		} else {
+			transactions = this.props.newTransactions.txs;
 		}
-		
+
 		return (
 			<div className={style.transactions}>
-				<h2 className={style.header}>Transactions</h2>
+				<h2 className={style.header}>New Transactions</h2>
 				{transactions.map((txn, index) =>
 					<div className={style.txns}>
 						<p key={index}>{txn.inputs[0].prev_out.addr_tag || txn.inputs[0].prev_out.addr}</p>
@@ -29,4 +30,4 @@ class Transactions extends Component {
 	}
 }
 
-export default Transactions;
+export default NewTransactions;

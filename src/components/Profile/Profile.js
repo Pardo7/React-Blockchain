@@ -2,6 +2,7 @@ import React from 'react';
 import WalletDetails from '../WalletDetails/WalletDetails';
 import Transactions from '../Transactions/Transactions';
 import style from './Profile.css';
+import NewTransactions from '../NewTransactions/NewTransactions';
 
 class Profile extends React.Component {
 	render() {
@@ -20,6 +21,7 @@ class Profile extends React.Component {
 		return (
 			<div className={style.profile}>
 				<WalletDetails balance={balance} address={address} />
+				<NewTransactions newTransactions={this.props.newTransactions}/>
 				<Transactions txs={txs} />
 			</div>
 		);
