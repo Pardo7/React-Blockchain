@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import style from './App.css';
 import Profile from './components/Profile/Profile';
 import Search from './components/Search/Search';
+import Pagination from './components/Pagination/Pagination';
 
 class App extends Component {
 	constructor(props) {
@@ -38,6 +39,14 @@ class App extends Component {
 		this.getAddressData(address);
 	}
 
+	handlePageChange(offset) {
+		if (offset === undefined) {
+			return;
+		}
+		const address = this.state.activeWalletAddress;
+		this.getAddressData(address, offset);
+	}
+
 	render() {
 		let nTrx;
 		if (this.state.profileDetails === null) {
@@ -52,6 +61,10 @@ class App extends Component {
 					<h1 className={style.header}>React Blockchain</h1>
 					<Search searchWalletAddress={this.handleSearchWalletAddress.bind(this)} />
 					<Profile profileDetails={this.state.profileDetails} />
+					<Pagination
+						numberOfItems={20}
+						totalItems={nTrx}
+						onChangePage={this.handlePageChange.bind(this)} />
 					<div className={style.bg}></div>
 					<div className={style.flare}></div>
 				</div>
