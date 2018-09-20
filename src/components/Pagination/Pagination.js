@@ -1,3 +1,10 @@
+/* Component: Profile.js
+ 	 Author: Pardo
+	 Purpose: Child component whos purpose is to handle and
+	 submit pagination oriented requests back up to the parent mediator component
+	 wallet search API.
+*/
+
 import React from 'react';
 import style from './Pagination.css';
 import PropTypes from 'prop-types';
@@ -20,21 +27,35 @@ class Pagination extends React.Component {
 			pager: {}
 		};
 	}
-
+	/**
+	* Life Cycle callback which sets the internal state page property
+	* upon receiving valid property values.
+	* @method componentWillMount
+  */
 	componentWillMount() {
 		// set page if numberOfItems & totalItems props are valid
 		if (this.props.numberOfItems && this.props.totalItems) {
 			this.setPage(this.props.initialPage);
 		}
 	}
-
+	/**
+	* Life Cycle callback which sets the internal state properties
+	* upon receiving newly updated valid property values.
+	* @method componentDidUpdate
+  */
 	componentDidUpdate(prevProps, prevState) {
 		// reset page if items array has changed
 		if (this.props.numberOfItems !== prevProps.numberOfItems) {
 			this.setPage(this.props.initialPage);
 		}
 	}
-
+	/**
+	* Method which sets the pagers initial properties and
+	* updates the pager state.
+	*
+	* @method setPage
+	* @param {Number} page
+  */
 	setPage(page) {
 		let { numberOfItems, totalItems } = this.props;
 		let pager = this.state.pager;
@@ -54,7 +75,17 @@ class Pagination extends React.Component {
 		// call change page function in parent component
 		this.props.onChangePage(pageOfItems);
 	}
-
+	/**
+	* Method which sets the pagers properties associated to the
+	* selected page, the total number of items being rendered
+	* along with the total number of items, in order to generate
+	* additional pages for user selection.
+	*
+	* @method getPager
+	* @param {Number} totalItems
+	* @param {Number} currentPage
+	* @param {Number} pageSize
+  */
 	getPager(totalItems, currentPage, pageSize) {
 		currentPage = currentPage || 1;
 		pageSize = pageSize || 10;

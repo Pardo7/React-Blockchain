@@ -1,3 +1,10 @@
+/* Component: Profile.js
+ 	 Author: Pardo
+	 Purpose: Child component whos purpose is to render a container of
+	 profile data associated to an individual bitcoin wallet address and propagate
+	 down property data from the main App.js mediator component, down to the appropriate child components.
+*/
+
 import React from 'react';
 import WalletDetails from '../WalletDetails/WalletDetails';
 import Transactions from '../Transactions/Transactions';

@@ -1,3 +1,9 @@
+/* Component: Transactions.js
+ 	 Author: Pardo
+	Purpose: Child component whos purpose is to render bitcoin wallet transaction data
+	propagated to it by the parent mediator component, App.js
+*/
+
 import React, { Component } from 'react';
 import style from './Transactions.css';
 import sb from 'satoshi-bitcoin';
@@ -9,7 +15,7 @@ class Transactions extends Component {
 		if (!transactions) {
 			return null;
 		}
-		
+
 		return (
 			<div className={style.transactions}>
 				<h2 className={style.header}>Transactions</h2>

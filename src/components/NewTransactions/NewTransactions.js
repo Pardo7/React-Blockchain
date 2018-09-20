@@ -1,3 +1,9 @@
+/* Component: NewTransactions.js
+ 	 Author: Pardo
+	 Purpose: Child component in charge of rendering and displaying newly added
+	 wallet transaction data to an already rendered wallet address.
+*/
+
 import React, { Component } from 'react';
 import style from './NewTransactions.css';
 import sb from 'satoshi-bitcoin';

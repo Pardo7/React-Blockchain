@@ -34,7 +34,7 @@ app.post('/api/data', (request, response) => {
 		console.log(data);
 		let {address, offset} = data;
 
-		fetch(`https://blockchain.info/rawaddr/${address}?limit=6&offset=${offset}`, {
+		fetch(`https://blockchain.info/rawaddr/${address}?limit=20&offset=${offset}`, {
 				method: 'GET',
 				headers: {
 					'Access-Control-Allow-Origin': '*',
