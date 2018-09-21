@@ -1,6 +1,6 @@
 # React-Blockchain
 
-A Bitcoin Wallet and Transaction Explorer.
+A Bitcoin Wallet Transaction Explorer.
 React Blockchain is built using React.js, Webpack, Node.js & Express.
 
 ### Setup
