@@ -51,6 +51,7 @@ Built at: 2018-09-20 17:31:27
 
 4) Open the application url http://localhost:3000/
 
+![img](https://github.com/Pardo7/React-Blockchain/blob/master/img.png)
 
 # Taking React Blockchain To Production
 ### Build
